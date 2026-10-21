@@ -76,14 +76,14 @@
                 <div
                     class="inline-flex items-center space-x-2 bg-secondary/20 border border-secondary/40 px-3.5 py-1.5 rounded-full text-amber-400 text-xs font-semibold uppercase shadow-sm">
                     <i class="fa-solid fa-star"></i>
-                    <span>Ready-to-Move Apartments • S+5 Structure • 18 Exclusive Flats</span>
+                    <span>Ready-to-Move • Occupancy Certificate Received • 18 Exclusive Flats</span>
                 </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
                     Krishna Avenue <span class="block text-secondary mt-1 text-3xl sm:text-4xl font-semibold">Where Elegance Meets Everyday Living</span>
                 </h1>
                 <p class="text-lg text-slate-300 max-w-xl">
                     Ready-to-move 3 BHK luxury apartments featuring 3 bathrooms, large kitchens, stilt parking, and S+5
-                    layout with 18 total units. BDA & ORERA approved.
+                    layout with 18 total units. Backed by official BDA approval and an acquired **Occupancy Certificate (OC)**.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2">
                     <a href="https://maps.app.goo.gl/txvLkg9cZRsQrnDh6?g_st=ac" target="_blank"
@@ -135,7 +135,7 @@
             <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Designed for Superior Living & Investment
             </h3>
             <p class="text-slate-600 mt-4">Located right near Hari Bhaina Square, Jatni, Krishna Avenue offers
-                an exclusive multi-story apartment community with immediate occupancy readiness. Click any card below to explore interactive views.</p>
+                an exclusive multi-story apartment community with verified government clearances. Click any card below to explore interactive views.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center max-w-4xl mx-auto">
@@ -153,11 +153,11 @@
                 <span class="text-xs text-secondary font-bold mt-3 inline-block">Click to View Tower <i class="fa-solid fa-arrow-right ml-1"></i></span>
             </div>
 
-            <!-- BDA & ORERA Card -> Opens Certificates Modal -->
+            <!-- Approvals & OC Card -> Opens Certificates Modal -->
             <div onclick="openCertificatesModal()" class="bg-white p-6 rounded-2xl shadow-md border border-slate-200 cursor-pointer hover:shadow-xl hover:-translate-y-1 transition group">
-                <span class="block text-3xl font-extrabold text-primary mb-1 group-hover:text-teal-700 transition">BDA & ORERA</span>
-                <span class="text-sm text-slate-600 block font-medium">Fully Approved</span>
-                <span class="text-xs text-secondary font-bold mt-3 inline-block">Click to View Certificates <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                <span class="block text-3xl font-extrabold text-primary mb-1 group-hover:text-teal-700 transition">BDA, ORERA & OC</span>
+                <span class="text-sm text-slate-600 block font-medium">Occupancy Certified</span>
+                <span class="text-xs text-secondary font-bold mt-3 inline-block">View Official Certificates <i class="fa-solid fa-arrow-right ml-1"></i></span>
             </div>
         </div>
     </section>
@@ -336,10 +336,11 @@
             <h3 class="text-3xl sm:text-4xl font-extrabold mb-12">Approved & Funded By Leading Institutions</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                <div onclick="openCertificatesModal()" class="bg-slate-800 p-8 rounded-2xl border border-slate-700 cursor-pointer hover:border-secondary transition">
                     <i class="fa-solid fa-file-shield text-4xl text-secondary mb-4"></i>
-                    <h4 class="text-xl font-bold mb-2">Government Approvals</h4>
-                    <p class="text-slate-300 text-sm">BDA & ORERA Approved Project. 100% transparent legal status.</p>
+                    <h4 class="text-xl font-bold mb-2">Government Approvals & Occupancy Certificate</h4>
+                    <p class="text-slate-300 text-sm">BDA & ORERA Approved with official **Occupancy Certificate (OC)** granted. 100% ready for legal registration and immediate move-in.</p>
+                    <span class="text-xs text-secondary font-bold mt-3 inline-block">Click to View Official Documents <i class="fa-solid fa-arrow-right ml-1"></i></span>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
                     <i class="fa-solid fa-landmark text-4xl text-secondary mb-4"></i>
@@ -409,7 +410,7 @@
             <div class="flex items-center justify-between pb-4 border-b border-slate-800 gap-2 shrink-0">
                 <div class="flex space-x-2">
                     <button onclick="switchCert('orera')" id="tabOrera" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-primary text-white transition shadow-md">ORERA Certificate</button>
-                    <button onclick="switchCert('occupancy')" id="tabOccupancy" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Occupancy Certificate</button>
+                    <button onclick="switchCert('occupancy')" id="tabOccupancy" class="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Occupancy Certificate (OC)</button>
                 </div>
                 <button onclick="document.getElementById('certModal').classList.add('hidden')" class="w-10 h-10 bg-white/10 text-white rounded-full flex items-center justify-center font-bold hover:bg-white/20 transition">
                     <i class="fa-solid fa-xmark"></i>
