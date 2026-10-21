@@ -25,13 +25,14 @@
 <body class="bg-slate-50 text-slate-800 font-sans antialiased scroll-smooth pb-20">
 
     <!-- Sister Project Switcher Bar -->
-    <div class="bg-slate-900 text-white py-2 px-4 text-center text-xs font-semibold tracking-wider">
-        <span class="text-slate-400 mr-2">EXPLORE SISTER PROJECTS:</span>
-        <a href="krishna-avenue.html"
-            class="bg-primary text-white px-3 py-1 rounded-md mx-1 shadow-sm transition">Krishna Avenue</a>
-        <a href="krishna-edifice.html"
-            class="bg-slate-800 text-slate-300 hover:bg-slate-700 px-3 py-1 rounded-md mx-1 transition">Krishna
-            Edifice</a>
+    <div class="bg-slate-900 text-white py-2.5 px-4 text-center text-xs font-semibold tracking-wider">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2">
+            <span class="text-slate-400 mr-1">EXPLORE SISTER PROJECTS:</span>
+            <a href="index.html"
+                class="bg-primary text-white px-3 py-1.5 rounded-lg shadow-sm transition">Krishna Avenue</a>
+            <a href="krishna-edifice.html"
+                class="bg-slate-800 text-slate-300 hover:bg-slate-700 px-3 py-1.5 rounded-lg transition">Krishna Edifice</a>
+        </div>
     </div>
 
     <!-- Top Navigation Header -->
@@ -355,17 +356,19 @@
         <p>&copy; 2026 Krishna Avenue. All rights reserved. | Contact: 9938067156</p>
     </footer>
 
-    <!-- Smart Floating Action Bar (Only Book Site Visit) -->
-    <div id="stickyFooter" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 py-3 px-4 shadow-2xl flex items-center justify-between transition-transform duration-300 translate-y-full">
-        <div class="text-white text-sm font-semibold hidden sm:block">
-            <i class="fa-solid fa-city text-secondary mr-2"></i> Krishna Avenue • Luxury Apartments
-        </div>
-        <div class="flex items-center space-x-3 w-full sm:w-auto justify-center">
-            <a href="#contact" class="bg-secondary hover:bg-amber-600 text-slate-950 font-bold px-8 py-3 rounded-xl shadow-lg transition flex items-center space-x-2 text-sm w-full sm:w-auto justify-center">
+    <!-- Smart Floating Action Bar (Moved to Left to clear Netlify watermark) -->
+    <div id="stickyFooter" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 py-3 px-6 shadow-2xl flex items-center justify-between transition-transform duration-300 translate-y-full">
+        <div class="flex items-center space-x-4">
+            <a href="#contact" class="bg-secondary hover:bg-amber-600 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg transition flex items-center space-x-2 text-sm">
                 <span>Book Site Visit</span>
                 <i class="fa-solid fa-arrow-up"></i>
             </a>
+            <div class="text-white text-sm font-semibold hidden md:block">
+                <i class="fa-solid fa-city text-secondary mr-2"></i> Krishna Avenue • Luxury Apartments
+            </div>
         </div>
+        <!-- Spacer block on the right to leave room for Netlify's watermark badge -->
+        <div class="w-32 sm:w-44"></div>
     </div>
 
     <!-- Single Image Modal -->
@@ -419,6 +422,25 @@
     </div>
 
     <script>
+        // Touch Swipe Navigation Between Sister Projects (Avenue <-> Edifice)
+        let touchstartX = 0;
+        let touchendX = 0;
+
+        function handleGesture() {
+            if (touchendX - touchstartX > 80 || touchstartX - touchendX > 80) {
+                window.location.href = 'krishna-edifice.html';
+            }
+        }
+
+        document.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            handleGesture();
+        });
+
         const plansData = {
             '1520': { title: '1520 Sq.Ft. (3 BHK Floor Plan)', img: 'images/avenue/floorplan15203bhk.jpeg' },
             '1525': { title: '1525 Sq.Ft. (3 BHK Floor Plan)', img: 'images/avenue/floorplan1525-3bhk.jpeg' },
